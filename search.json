@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "slides/semana-01/index.html#machine-learning-ii",
+    "href": "slides/semana-01/index.html#machine-learning-ii",
+    "title": "Machine Learning II",
+    "section": "Machine Learning II",
+    "text": "Machine Learning II\nModelar, comparar, validar e interpretar\nWilmer Pineda-Ríos\nwilmer.pineda@uexternado.edu.co\nUniversidad Externado de Colombia\nPrograma de Ciencia de Datos"
+  },
+  {
+    "objectID": "slides/semana-01/index.html#por-qué-existe-ml2",
+    "href": "slides/semana-01/index.html#por-qué-existe-ml2",
+    "title": "Machine Learning II",
+    "section": "¿Por qué existe ML2?",
+    "text": "¿Por qué existe ML2?\nML1 nos dio el lenguaje del modelamiento predictivo:\n\nformular una tarea de clasificación o regresión;\nconstruir una referencia;\nentrenar y evaluar sin contaminar la prueba;\ninterpretar métricas y comunicar resultados.\n\nML2 pregunta qué ocurre cuando la línea no es suficiente y el modelo debe capturar estructuras más flexibles."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#el-cambio-de-perspectiva",
+    "href": "slides/semana-01/index.html#el-cambio-de-perspectiva",
+    "title": "Machine Learning II",
+    "section": "El cambio de perspectiva",
+    "text": "El cambio de perspectiva\n\n\nEn ML1\n\nModelos lineales y probabilísticos.\nFundamentos de validación.\nMétricas y baselines.\nPipelines reproducibles.\n\n\nEn ML2\n\nNo linealidad e interacciones.\nComplejidad y estabilidad.\nComparación rigurosa.\nInterpretabilidad moderna."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#lo-que-aprenderemos-a-hacer",
+    "href": "slides/semana-01/index.html#lo-que-aprenderemos-a-hacer",
+    "title": "Machine Learning II",
+    "section": "Lo que aprenderemos a hacer",
+    "text": "Lo que aprenderemos a hacer\nAl finalizar el curso podremos:\n\ncomparar familias de modelos avanzados;\ncontrolar complejidad y evaluar generalización;\ndiseñar experimentos reproducibles y trazables;\ninterpretar modelos global y localmente;\nconvertir resultados técnicos en recomendaciones responsables."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#ruta-del-semestre",
+    "href": "slides/semana-01/index.html#ruta-del-semestre",
+    "title": "Machine Learning II",
+    "section": "Ruta del semestre",
+    "text": "Ruta del semestre\n\nÁrboles y ensambles: decisiones, varianza y combinación de modelos.\nSVM: márgenes, kernels y fronteras no lineales.\nDensidad y clustering: estructura sin variable objetivo.\nReducción dimensional: representaciones lineales y no lineales.\nInterpretabilidad y validación avanzada.\nTrazabilidad, despliegue y proyecto."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#cómo-trabajaremos",
+    "href": "slides/semana-01/index.html#cómo-trabajaremos",
+    "title": "Machine Learning II",
+    "section": "Cómo trabajaremos",
+    "text": "Cómo trabajaremos\nCada bloque combina:\n\nFundamentación: intuición, formulación y limitaciones.\nImplementación: Python y scikit-learn.\nExperimentación: comparar, perturbar y analizar errores.\nComunicación: decisión, evidencia, recomendación y riesgo.\n\nNo buscamos el número más alto: buscamos una conclusión que resista preguntas."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#evaluación",
+    "href": "slides/semana-01/index.html#evaluación",
+    "title": "Machine Learning II",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nComponente\nPeso\n\n\n\n\nExamen escrito 1\n20 %\n\n\nExamen escrito 2\n20 %\n\n\nExamen escrito 3\n20 %\n\n\nProyecto integrador\n20 %\n\n\nTalleres, quices y tareas\n20 %\n\n\n\nEl diagnóstico inicial es formativo y no punitivo."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#proyecto-integrador",
+    "href": "slides/semana-01/index.html#proyecto-integrador",
+    "title": "Machine Learning II",
+    "section": "Proyecto integrador",
+    "text": "Proyecto integrador\nEl proyecto reproduce y adapta un método de un artículo científico a un problema predictivo pertinente.\n\n\n\nEntrega\nContenido\nPeso dentro del proyecto\n\n\n\n\nPrimera\nArtículo, problema, datos y plan\n20 %\n\n\nSegunda\nModelamiento y validación\n40 %\n\n\nFinal\nConsolidación, interpretación y despliegue\n40 %\n\n\n\nCada entrega incluye informe, código reproducible y sustentación."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#acuerdos-de-trabajo",
+    "href": "slides/semana-01/index.html#acuerdos-de-trabajo",
+    "title": "Machine Learning II",
+    "section": "Acuerdos de trabajo",
+    "text": "Acuerdos de trabajo\n\nSeparar selección de modelos y evaluación final.\nDeclarar semillas, dependencias y decisiones.\nJustificar métricas e hiperparámetros.\nDiferenciar predicción, explicación y causalidad.\nCitar fuentes, código y datos externos.\nDeclarar el uso de IA y comprender todo lo entregado."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#qué-necesitamos-recordar-de-ml1",
+    "href": "slides/semana-01/index.html#qué-necesitamos-recordar-de-ml1",
+    "title": "Machine Learning II",
+    "section": "¿Qué necesitamos recordar de ML1?",
+    "text": "¿Qué necesitamos recordar de ML1?\n\nFormulación de clasificación y regresión.\nBaselines y costos de error.\nMétricas de clasificación y regresión.\nEntrenamiento, validación y prueba.\nSesgo, varianza y sobreajuste.\nPreprocesamiento sin fuga y pipelines.\nModelos de referencia e interpretación."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#diagnóstico-de-entrada",
+    "href": "slides/semana-01/index.html#diagnóstico-de-entrada",
+    "title": "Machine Learning II",
+    "section": "Diagnóstico de entrada",
+    "text": "Diagnóstico de entrada\nEl diagnóstico tiene 24 preguntas agrupadas en seis competencias.\n\nUn solo intento, sin nota punitiva.\nLas respuestas se guardan en este navegador hasta el envío.\nEl resultado muestra fortalezas y rutas de nivelación.\nEl docente recibe un perfil para ajustar el ritmo del curso.\n\nEl resultado no etiqueta al estudiante: orienta el aprendizaje.\nAbrir el diagnóstico interactivo"
+  },
+  {
+    "objectID": "slides/semana-01/index.html#cuando-la-línea-no-alcanza",
+    "href": "slides/semana-01/index.html#cuando-la-línea-no-alcanza",
+    "title": "Machine Learning II",
+    "section": "Cuando la línea no alcanza",
+    "text": "Cuando la línea no alcanza\nUna regresión logística construye una frontera lineal en el espacio original.\nPero muchos problemas contienen:\n\numbrales;\ninteracciones entre variables;\nregiones con comportamientos distintos;\nrelaciones difíciles de especificar de antemano.\n\nLa siguiente pregunta es: ¿puede el modelo aprender sus propias reglas?"
+  },
+  {
+    "objectID": "slides/semana-01/index.html#próxima-sesión",
+    "href": "slides/semana-01/index.html#próxima-sesión",
+    "title": "Machine Learning II",
+    "section": "Próxima sesión",
+    "text": "Próxima sesión\nÁrboles de decisión para clasificación\nAprenderemos cómo un algoritmo:\n\nformula preguntas sobre las variables;\ndivide recursivamente los datos;\ncrea regiones cada vez más homogéneas;\nconvierte esas regiones en clases y probabilidades."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#árboles-de-decisión",
+    "href": "slides/semana-01/arboles-clasificacion.html#árboles-de-decisión",
+    "title": "Machine Learning II",
+    "section": "Árboles de decisión",
+    "text": "Árboles de decisión\nIntroducción a la clasificación basada en reglas\nMachine Learning II — Semana 1"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#problema-motivador",
+    "href": "slides/semana-01/arboles-clasificacion.html#problema-motivador",
+    "title": "Machine Learning II",
+    "section": "Problema motivador",
+    "text": "Problema motivador\nUna empresa de telecomunicaciones quiere anticipar qué clientes podrían cancelar su servicio.\n\nActor: equipo de retención.\nDecisión: a quién contactar primero.\nCosto: perder un cliente o saturar al equipo con alertas.\nPatrón: el riesgo puede cambiar al cruzar varios umbrales.\n\n¿Cómo aprende un modelo esas condiciones sin escribirlas manualmente?"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#cuando-una-frontera-lineal-no-basta",
+    "href": "slides/semana-01/arboles-clasificacion.html#cuando-una-frontera-lineal-no-basta",
+    "title": "Machine Learning II",
+    "section": "Cuando una frontera lineal no basta",
+    "text": "Cuando una frontera lineal no basta\nUna frontera lineal separa el espacio con una recta o hiperplano.\nUn árbol puede construir regiones mediante reglas como:\n¿presentó quejas?\n├── No: ¿disminuyó su uso?\n└── Sí: ¿su contrato es reciente?\nLas reglas capturan umbrales e interacciones de forma natural."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#anatomía-de-un-árbol",
+    "href": "slides/semana-01/arboles-clasificacion.html#anatomía-de-un-árbol",
+    "title": "Machine Learning II",
+    "section": "Anatomía de un árbol",
+    "text": "Anatomía de un árbol\n\nRaíz: contiene todas las observaciones.\nNodo interno: plantea una condición sobre una variable.\nRama: representa el resultado de la condición.\nHoja: contiene la predicción final.\nProfundidad: número de divisiones desde la raíz.\n\nCada observación recorre un único camino desde la raíz hasta una hoja."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#particionamiento-binario-recursivo",
+    "href": "slides/semana-01/arboles-clasificacion.html#particionamiento-binario-recursivo",
+    "title": "Machine Learning II",
+    "section": "Particionamiento binario recursivo",
+    "text": "Particionamiento binario recursivo\nEl algoritmo repite tres acciones:\n\nExamina variables y puntos de corte candidatos.\nEscoge la división que más mejora la homogeneidad.\nRepite el proceso dentro de cada nodo hijo.\n\nSe detiene cuando alcanza una restricción o ya no encuentra una mejora válida."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#una-búsqueda-voraz",
+    "href": "slides/semana-01/arboles-clasificacion.html#una-búsqueda-voraz",
+    "title": "Machine Learning II",
+    "section": "Una búsqueda voraz",
+    "text": "Una búsqueda voraz\nEl árbol toma la mejor decisión disponible en el nodo actual.\n\nNo evalúa todas las estructuras posibles.\nUna división temprana condiciona las siguientes.\nEl resultado puede cambiar si cambian ligeramente los datos.\n\nEsta estrategia es eficiente, pero ayuda a explicar la inestabilidad de un árbol individual."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#qué-significa-pureza",
+    "href": "slides/semana-01/arboles-clasificacion.html#qué-significa-pureza",
+    "title": "Machine Learning II",
+    "section": "¿Qué significa pureza?",
+    "text": "¿Qué significa pureza?\nUn nodo es puro cuando todas sus observaciones pertenecen a la misma clase.\n\n\nNodo A\n\n50 permanecen\n50 cancelan\n\nAlta impureza.\n\nNodo B\n\n98 permanecen\n2 cancelan\n\nBaja impureza."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#índice-de-gini",
+    "href": "slides/semana-01/arboles-clasificacion.html#índice-de-gini",
+    "title": "Machine Learning II",
+    "section": "Índice de Gini",
+    "text": "Índice de Gini\nSi \\(p_{mk}\\) es la proporción de la clase \\(k\\) en el nodo \\(m\\):\n\\[\nG_m = 1 - \\sum_{k=1}^{K} p_{mk}^2\n\\]\n\n\\(G_m=0\\): nodo completamente puro.\nEn clasificación binaria, el máximo es \\(0.5\\).\nPuede interpretarse como la probabilidad de clasificar mal al asignar una etiqueta según las proporciones del nodo."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#entropía",
+    "href": "slides/semana-01/arboles-clasificacion.html#entropía",
+    "title": "Machine Learning II",
+    "section": "Entropía",
+    "text": "Entropía\nOtra medida de impureza es:\n\\[\nH_m = -\\sum_{k=1}^{K}p_{mk}\\log_2(p_{mk})\n\\]\nGini y entropía suelen producir árboles parecidos, aunque no idénticos.\nLo importante no es memorizar dos fórmulas: es entender que ambas premian nodos más homogéneos."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#evaluar-una-división",
+    "href": "slides/semana-01/arboles-clasificacion.html#evaluar-una-división",
+    "title": "Machine Learning II",
+    "section": "Evaluar una división",
+    "text": "Evaluar una división\nPara un corte que genera nodos izquierdo y derecho:\n\\[\nI_{split}=\\frac{N_L}{N_m}I_L+\\frac{N_R}{N_m}I_R\n\\]\nLa mejora es:\n\\[\n\\Delta I = I_m-I_{split}\n\\]\nEl algoritmo elige la variable y el umbral con la mayor reducción de impureza."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#qué-predice-una-hoja",
+    "href": "slides/semana-01/arboles-clasificacion.html#qué-predice-una-hoja",
+    "title": "Machine Learning II",
+    "section": "¿Qué predice una hoja?",
+    "text": "¿Qué predice una hoja?\nSi una hoja contiene 40 clientes:\n\n30 permanecen;\n10 cancelan.\n\nEntonces:\n\nclase predicha: permanece;\nprobabilidad estimada de churn: \\(10/40=0.25\\).\n\nLa probabilidad es una proporción aprendida en la hoja, no una certeza individual."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#leer-una-observación",
+    "href": "slides/semana-01/arboles-clasificacion.html#leer-una-observación",
+    "title": "Machine Learning II",
+    "section": "Leer una observación",
+    "text": "Leer una observación\nQuejas &gt; 0.5\n└── Sí\n    └── Estado &gt; 1.5\n        ├── No  → hoja: 35 % churn\n        └── Sí  → hoja: 82 % churn\nLa predicción puede explicarse como una secuencia concreta de condiciones.\nEso hace al árbol interpretable, pero no convierte sus reglas en relaciones causales."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#fronteras-de-decisión",
+    "href": "slides/semana-01/arboles-clasificacion.html#fronteras-de-decisión",
+    "title": "Machine Learning II",
+    "section": "Fronteras de decisión",
+    "text": "Fronteras de decisión\nCada corte sobre una variable crea una frontera paralela a uno de los ejes.\nAl combinar cortes, el árbol construye regiones rectangulares o hiperrectangulares.\nPor eso puede representar patrones no lineales sin crear interacciones manualmente."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#controlar-la-complejidad",
+    "href": "slides/semana-01/arboles-clasificacion.html#controlar-la-complejidad",
+    "title": "Machine Learning II",
+    "section": "Controlar la complejidad",
+    "text": "Controlar la complejidad\nUn árbol sin límites puede crear hojas para casos muy específicos.\n\nmax_depth: limita el número de preguntas encadenadas.\nmin_samples_leaf: exige evidencia mínima en cada hoja.\nmin_samples_split: limita cuándo puede dividirse un nodo.\nccp_alpha: controla la poda posterior.\n\nÁrbol más profundo no significa árbol que generaliza mejor."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#fortalezas-y-limitaciones",
+    "href": "slides/semana-01/arboles-clasificacion.html#fortalezas-y-limitaciones",
+    "title": "Machine Learning II",
+    "section": "Fortalezas y limitaciones",
+    "text": "Fortalezas y limitaciones\n\n\n\nFortalezas\nLimitaciones\n\n\n\n\nReglas fáciles de recorrer\nAlta varianza e inestabilidad\n\n\nCaptura no linealidad\nPuede sobreajustar\n\n\nAprende interacciones\nFronteras escalonadas\n\n\nNo exige escalamiento\nProbabilidades poco suaves"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#puente-a-scikit-learn",
+    "href": "slides/semana-01/arboles-clasificacion.html#puente-a-scikit-learn",
+    "title": "Machine Learning II",
+    "section": "Puente a scikit-learn",
+    "text": "Puente a scikit-learn\nfrom sklearn.tree import DecisionTreeClassifier\n\ntree = DecisionTreeClassifier(\n    criterion=\"gini\",\n    max_depth=3,\n    min_samples_leaf=20,\n    random_state=42,\n)\ntree.fit(X_train, y_train)\nEl algoritmo necesita datos numéricos, pero no requiere estandarizar sus escalas."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#preguntas-de-salida",
+    "href": "slides/semana-01/arboles-clasificacion.html#preguntas-de-salida",
+    "title": "Machine Learning II",
+    "section": "Preguntas de salida",
+    "text": "Preguntas de salida\n\n¿Qué optimiza localmente un árbol de clasificación?\n¿Cómo obtiene una probabilidad en una hoja?\n¿Por qué un árbol profundo puede fallar en datos nuevos?\n¿Qué diferencia hay entre una regla predictiva y una conclusión causal?"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#próxima-sesión",
+    "href": "slides/semana-01/arboles-clasificacion.html#próxima-sesión",
+    "title": "Machine Learning II",
+    "section": "Próxima sesión",
+    "text": "Próxima sesión\nÁrboles de regresión\nMantendremos la misma estructura recursiva, pero cambiaremos:\n\nla medida de calidad de cada división;\nel valor que se predice en cada hoja;\nlas métricas usadas para evaluar el resultado."
+  }
+]
