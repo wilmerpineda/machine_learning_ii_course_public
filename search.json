@@ -1,0 +1,723 @@
+[
+  {
+    "objectID": "slides/semana-01/index.html#machine-learning-ii",
+    "href": "slides/semana-01/index.html#machine-learning-ii",
+    "title": "Machine Learning II",
+    "section": "Machine Learning II",
+    "text": "Machine Learning II\nModelar, comparar, validar e interpretar\nWilmer Pineda-Ríos\nwilmer.pineda@uexternado.edu.co\nUniversidad Externado de Colombia\nPrograma de Ciencia de Datos"
+  },
+  {
+    "objectID": "slides/semana-01/index.html#por-qué-existe-ml2",
+    "href": "slides/semana-01/index.html#por-qué-existe-ml2",
+    "title": "Machine Learning II",
+    "section": "¿Por qué existe ML2?",
+    "text": "¿Por qué existe ML2?\nML1 nos dio el lenguaje del modelamiento predictivo:\n\nformular una tarea de clasificación o regresión;\nconstruir una referencia;\nentrenar y evaluar sin contaminar la prueba;\ninterpretar métricas y comunicar resultados.\n\nML2 pregunta qué ocurre cuando la línea no es suficiente y el modelo debe capturar estructuras más flexibles."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#el-cambio-de-perspectiva",
+    "href": "slides/semana-01/index.html#el-cambio-de-perspectiva",
+    "title": "Machine Learning II",
+    "section": "El cambio de perspectiva",
+    "text": "El cambio de perspectiva\n\n\nEn ML1\n\nModelos lineales y probabilísticos.\nFundamentos de validación.\nMétricas y baselines.\nPipelines reproducibles.\n\n\nEn ML2\n\nNo linealidad e interacciones.\nComplejidad y estabilidad.\nComparación rigurosa.\nInterpretabilidad moderna."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#lo-que-aprenderemos-a-hacer",
+    "href": "slides/semana-01/index.html#lo-que-aprenderemos-a-hacer",
+    "title": "Machine Learning II",
+    "section": "Lo que aprenderemos a hacer",
+    "text": "Lo que aprenderemos a hacer\nAl finalizar el curso podremos:\n\ncomparar familias de modelos avanzados;\ncontrolar complejidad y evaluar generalización;\ndiseñar experimentos reproducibles y trazables;\ninterpretar modelos global y localmente;\nconvertir resultados técnicos en recomendaciones responsables."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#ruta-del-semestre",
+    "href": "slides/semana-01/index.html#ruta-del-semestre",
+    "title": "Machine Learning II",
+    "section": "Ruta del semestre",
+    "text": "Ruta del semestre\n\nÁrboles y ensambles: decisiones, varianza y combinación de modelos.\nSVM: márgenes, kernels y fronteras no lineales.\nDensidad y clustering: estructura sin variable objetivo.\nReducción dimensional: representaciones lineales y no lineales.\nInterpretabilidad y validación avanzada.\nTrazabilidad, despliegue y proyecto."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#cómo-trabajaremos",
+    "href": "slides/semana-01/index.html#cómo-trabajaremos",
+    "title": "Machine Learning II",
+    "section": "Cómo trabajaremos",
+    "text": "Cómo trabajaremos\nCada bloque combina:\n\nFundamentación: intuición, formulación y limitaciones.\nImplementación: Python y scikit-learn.\nExperimentación: comparar, perturbar y analizar errores.\nComunicación: decisión, evidencia, recomendación y riesgo.\n\nNo buscamos el número más alto: buscamos una conclusión que resista preguntas."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#evaluación",
+    "href": "slides/semana-01/index.html#evaluación",
+    "title": "Machine Learning II",
+    "section": "Evaluación",
+    "text": "Evaluación\n\n\n\nComponente\nPeso\n\n\n\n\nExamen escrito 1\n20 %\n\n\nExamen escrito 2\n20 %\n\n\nExamen escrito 3\n20 %\n\n\nProyecto integrador\n20 %\n\n\nTalleres, quices y tareas\n20 %\n\n\n\nEl diagnóstico inicial es formativo y no punitivo."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#proyecto-integrador",
+    "href": "slides/semana-01/index.html#proyecto-integrador",
+    "title": "Machine Learning II",
+    "section": "Proyecto integrador",
+    "text": "Proyecto integrador\nEl proyecto reproduce y adapta un método de un artículo científico a un problema predictivo pertinente.\n\n\n\nEntrega\nContenido\nPeso dentro del proyecto\n\n\n\n\nPrimera\nArtículo, problema, datos y plan\n20 %\n\n\nSegunda\nModelamiento y validación\n40 %\n\n\nFinal\nConsolidación, interpretación y despliegue\n40 %\n\n\n\nCada entrega incluye informe, código reproducible y sustentación."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#acuerdos-de-trabajo",
+    "href": "slides/semana-01/index.html#acuerdos-de-trabajo",
+    "title": "Machine Learning II",
+    "section": "Acuerdos de trabajo",
+    "text": "Acuerdos de trabajo\n\nSeparar selección de modelos y evaluación final.\nDeclarar semillas, dependencias y decisiones.\nJustificar métricas e hiperparámetros.\nDiferenciar predicción, explicación y causalidad.\nCitar fuentes, código y datos externos.\nDeclarar el uso de IA y comprender todo lo entregado."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#qué-necesitamos-recordar-de-ml1",
+    "href": "slides/semana-01/index.html#qué-necesitamos-recordar-de-ml1",
+    "title": "Machine Learning II",
+    "section": "¿Qué necesitamos recordar de ML1?",
+    "text": "¿Qué necesitamos recordar de ML1?\n\nFormulación de clasificación y regresión.\nBaselines y costos de error.\nMétricas de clasificación y regresión.\nEntrenamiento, validación y prueba.\nSesgo, varianza y sobreajuste.\nPreprocesamiento sin fuga y pipelines.\nModelos de referencia e interpretación."
+  },
+  {
+    "objectID": "slides/semana-01/index.html#diagnóstico-de-entrada",
+    "href": "slides/semana-01/index.html#diagnóstico-de-entrada",
+    "title": "Machine Learning II",
+    "section": "Diagnóstico de entrada",
+    "text": "Diagnóstico de entrada\nEl diagnóstico tiene 24 preguntas agrupadas en seis competencias.\n\nUn solo intento, sin nota punitiva.\nLas respuestas se guardan en este navegador hasta el envío.\nEl resultado muestra fortalezas y rutas de nivelación.\nEl docente recibe un perfil para ajustar el ritmo del curso.\n\nEl resultado no etiqueta al estudiante: orienta el aprendizaje.\nAbrir el diagnóstico interactivo"
+  },
+  {
+    "objectID": "slides/semana-01/index.html#cuando-la-línea-no-alcanza",
+    "href": "slides/semana-01/index.html#cuando-la-línea-no-alcanza",
+    "title": "Machine Learning II",
+    "section": "Cuando la línea no alcanza",
+    "text": "Cuando la línea no alcanza\nUna regresión logística construye una frontera lineal en el espacio original.\nPero muchos problemas contienen:\n\numbrales;\ninteracciones entre variables;\nregiones con comportamientos distintos;\nrelaciones difíciles de especificar de antemano.\n\nLa siguiente pregunta es: ¿puede el modelo aprender sus propias reglas?"
+  },
+  {
+    "objectID": "slides/semana-01/index.html#próxima-sesión",
+    "href": "slides/semana-01/index.html#próxima-sesión",
+    "title": "Machine Learning II",
+    "section": "Próxima sesión",
+    "text": "Próxima sesión\nÁrboles de decisión para clasificación\nAprenderemos cómo un algoritmo:\n\nformula preguntas sobre las variables;\ndivide recursivamente los datos;\ncrea regiones cada vez más homogéneas;\nconvierte esas regiones en clases y probabilidades."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#árboles-de-decisión",
+    "href": "slides/semana-01/arboles-clasificacion.html#árboles-de-decisión",
+    "title": "Machine Learning II",
+    "section": "Árboles de decisión",
+    "text": "Árboles de decisión\nIntroducción a la clasificación basada en reglas\nMachine Learning II — Semana 1"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#problema-motivador",
+    "href": "slides/semana-01/arboles-clasificacion.html#problema-motivador",
+    "title": "Machine Learning II",
+    "section": "Problema motivador",
+    "text": "Problema motivador\nUna empresa de telecomunicaciones quiere anticipar qué clientes podrían cancelar su servicio.\n\nActor: equipo de retención.\nDecisión: a quién contactar primero.\nCosto: perder un cliente o saturar al equipo con alertas.\nPatrón: el riesgo puede cambiar al cruzar varios umbrales.\n\n¿Cómo aprende un modelo esas condiciones sin escribirlas manualmente?"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#cuando-una-frontera-lineal-no-basta",
+    "href": "slides/semana-01/arboles-clasificacion.html#cuando-una-frontera-lineal-no-basta",
+    "title": "Machine Learning II",
+    "section": "Cuando una frontera lineal no basta",
+    "text": "Cuando una frontera lineal no basta\nUna frontera lineal separa el espacio con una recta o hiperplano.\nUn árbol puede construir regiones mediante reglas como:\n¿presentó quejas?\n├── No: ¿disminuyó su uso?\n└── Sí: ¿su contrato es reciente?\nLas reglas capturan umbrales e interacciones de forma natural."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#anatomía-de-un-árbol",
+    "href": "slides/semana-01/arboles-clasificacion.html#anatomía-de-un-árbol",
+    "title": "Machine Learning II",
+    "section": "Anatomía de un árbol",
+    "text": "Anatomía de un árbol\n\nRaíz: contiene todas las observaciones.\nNodo interno: plantea una condición sobre una variable.\nRama: representa el resultado de la condición.\nHoja: contiene la predicción final.\nProfundidad: número de divisiones desde la raíz.\n\nCada observación recorre un único camino desde la raíz hasta una hoja."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#particionamiento-binario-recursivo",
+    "href": "slides/semana-01/arboles-clasificacion.html#particionamiento-binario-recursivo",
+    "title": "Machine Learning II",
+    "section": "Particionamiento binario recursivo",
+    "text": "Particionamiento binario recursivo\nEl algoritmo repite tres acciones:\n\nExamina variables y puntos de corte candidatos.\nEscoge la división que más mejora la homogeneidad.\nRepite el proceso dentro de cada nodo hijo.\n\nSe detiene cuando alcanza una restricción o ya no encuentra una mejora válida."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#una-búsqueda-voraz",
+    "href": "slides/semana-01/arboles-clasificacion.html#una-búsqueda-voraz",
+    "title": "Machine Learning II",
+    "section": "Una búsqueda voraz",
+    "text": "Una búsqueda voraz\nEl árbol toma la mejor decisión disponible en el nodo actual.\n\nNo evalúa todas las estructuras posibles.\nUna división temprana condiciona las siguientes.\nEl resultado puede cambiar si cambian ligeramente los datos.\n\nEsta estrategia es eficiente, pero ayuda a explicar la inestabilidad de un árbol individual."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#qué-significa-pureza",
+    "href": "slides/semana-01/arboles-clasificacion.html#qué-significa-pureza",
+    "title": "Machine Learning II",
+    "section": "¿Qué significa pureza?",
+    "text": "¿Qué significa pureza?\nUn nodo es puro cuando todas sus observaciones pertenecen a la misma clase.\n\n\nNodo A\n\n50 permanecen\n50 cancelan\n\nAlta impureza.\n\nNodo B\n\n98 permanecen\n2 cancelan\n\nBaja impureza."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#índice-de-gini",
+    "href": "slides/semana-01/arboles-clasificacion.html#índice-de-gini",
+    "title": "Machine Learning II",
+    "section": "Índice de Gini",
+    "text": "Índice de Gini\nSi \\(p_{mk}\\) es la proporción de la clase \\(k\\) en el nodo \\(m\\):\n\\[\nG_m = 1 - \\sum_{k=1}^{K} p_{mk}^2\n\\]\n\n\\(G_m=0\\): nodo completamente puro.\nEn clasificación binaria, el máximo es \\(0.5\\).\nPuede interpretarse como la probabilidad de clasificar mal al asignar una etiqueta según las proporciones del nodo."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#entropía",
+    "href": "slides/semana-01/arboles-clasificacion.html#entropía",
+    "title": "Machine Learning II",
+    "section": "Entropía",
+    "text": "Entropía\nOtra medida de impureza es:\n\\[\nH_m = -\\sum_{k=1}^{K}p_{mk}\\log_2(p_{mk})\n\\]\nGini y entropía suelen producir árboles parecidos, aunque no idénticos.\nLo importante no es memorizar dos fórmulas: es entender que ambas premian nodos más homogéneos."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#evaluar-una-división",
+    "href": "slides/semana-01/arboles-clasificacion.html#evaluar-una-división",
+    "title": "Machine Learning II",
+    "section": "Evaluar una división",
+    "text": "Evaluar una división\nPara un corte que genera nodos izquierdo y derecho:\n\\[\nI_{split}=\\frac{N_L}{N_m}I_L+\\frac{N_R}{N_m}I_R\n\\]\nLa mejora es:\n\\[\n\\Delta I = I_m-I_{split}\n\\]\nEl algoritmo elige la variable y el umbral con la mayor reducción de impureza."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#qué-predice-una-hoja",
+    "href": "slides/semana-01/arboles-clasificacion.html#qué-predice-una-hoja",
+    "title": "Machine Learning II",
+    "section": "¿Qué predice una hoja?",
+    "text": "¿Qué predice una hoja?\nSi una hoja contiene 40 clientes:\n\n30 permanecen;\n10 cancelan.\n\nEntonces:\n\nclase predicha: permanece;\nprobabilidad estimada de churn: \\(10/40=0.25\\).\n\nLa probabilidad es una proporción aprendida en la hoja, no una certeza individual."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#leer-una-observación",
+    "href": "slides/semana-01/arboles-clasificacion.html#leer-una-observación",
+    "title": "Machine Learning II",
+    "section": "Leer una observación",
+    "text": "Leer una observación\nQuejas &gt; 0.5\n└── Sí\n    └── Estado &gt; 1.5\n        ├── No  → hoja: 35 % churn\n        └── Sí  → hoja: 82 % churn\nLa predicción puede explicarse como una secuencia concreta de condiciones.\nEso hace al árbol interpretable, pero no convierte sus reglas en relaciones causales."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#fronteras-de-decisión",
+    "href": "slides/semana-01/arboles-clasificacion.html#fronteras-de-decisión",
+    "title": "Machine Learning II",
+    "section": "Fronteras de decisión",
+    "text": "Fronteras de decisión\nCada corte sobre una variable crea una frontera paralela a uno de los ejes.\nAl combinar cortes, el árbol construye regiones rectangulares o hiperrectangulares.\nPor eso puede representar patrones no lineales sin crear interacciones manualmente."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#controlar-la-complejidad",
+    "href": "slides/semana-01/arboles-clasificacion.html#controlar-la-complejidad",
+    "title": "Machine Learning II",
+    "section": "Controlar la complejidad",
+    "text": "Controlar la complejidad\nUn árbol sin límites puede crear hojas para casos muy específicos.\n\nmax_depth: limita el número de preguntas encadenadas.\nmin_samples_leaf: exige evidencia mínima en cada hoja.\nmin_samples_split: limita cuándo puede dividirse un nodo.\nccp_alpha: controla la poda posterior.\n\nÁrbol más profundo no significa árbol que generaliza mejor."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#fortalezas-y-limitaciones",
+    "href": "slides/semana-01/arboles-clasificacion.html#fortalezas-y-limitaciones",
+    "title": "Machine Learning II",
+    "section": "Fortalezas y limitaciones",
+    "text": "Fortalezas y limitaciones\n\n\n\nFortalezas\nLimitaciones\n\n\n\n\nReglas fáciles de recorrer\nAlta varianza e inestabilidad\n\n\nCaptura no linealidad\nPuede sobreajustar\n\n\nAprende interacciones\nFronteras escalonadas\n\n\nNo exige escalamiento\nProbabilidades poco suaves"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#puente-a-scikit-learn",
+    "href": "slides/semana-01/arboles-clasificacion.html#puente-a-scikit-learn",
+    "title": "Machine Learning II",
+    "section": "Puente a scikit-learn",
+    "text": "Puente a scikit-learn\nfrom sklearn.tree import DecisionTreeClassifier\n\ntree = DecisionTreeClassifier(\n    criterion=\"gini\",\n    max_depth=3,\n    min_samples_leaf=20,\n    random_state=42,\n)\ntree.fit(X_train, y_train)\nEl algoritmo necesita datos numéricos, pero no requiere estandarizar sus escalas."
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#preguntas-de-salida",
+    "href": "slides/semana-01/arboles-clasificacion.html#preguntas-de-salida",
+    "title": "Machine Learning II",
+    "section": "Preguntas de salida",
+    "text": "Preguntas de salida\n\n¿Qué optimiza localmente un árbol de clasificación?\n¿Cómo obtiene una probabilidad en una hoja?\n¿Por qué un árbol profundo puede fallar en datos nuevos?\n¿Qué diferencia hay entre una regla predictiva y una conclusión causal?"
+  },
+  {
+    "objectID": "slides/semana-01/arboles-clasificacion.html#próxima-sesión",
+    "href": "slides/semana-01/arboles-clasificacion.html#próxima-sesión",
+    "title": "Machine Learning II",
+    "section": "Próxima sesión",
+    "text": "Próxima sesión\nÁrboles de regresión\nMantendremos la misma estructura recursiva, pero cambiaremos:\n\nla medida de calidad de cada división;\nel valor que se predice en cada hoja;\nlas métricas usadas para evaluar el resultado."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#árboles-de-regresión",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#árboles-de-regresión",
+    "title": "Machine Learning II",
+    "section": "Árboles de regresión",
+    "text": "Árboles de regresión\nDe clases homogéneas a respuestas numéricas\nMachine Learning II · Semana 2 · Sesión 1"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#la-decisión",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#la-decisión",
+    "title": "Machine Learning II",
+    "section": "La decisión",
+    "text": "La decisión\nUn sistema de bicicletas compartidas debe anticipar la demanda diaria.\n\nActor: equipo de operaciones.\nDecisión: disponibilidad y redistribución.\nObjetivo: número de alquileres cnt.\nCosto: bicicletas ociosas frente a demanda insatisfecha.\n\n¿Cómo aprendemos umbrales e interacciones sin imponer una ecuación?"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#puente-desde-clasificación",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#puente-desde-clasificación",
+    "title": "Machine Learning II",
+    "section": "Puente desde clasificación",
+    "text": "Puente desde clasificación\n\n\n\nElemento\nClasificación\nRegresión\n\n\n\n\nPredicción de hoja\nclase/proporción\nmedia local\n\n\nImpureza\nGini o entropía\nerror cuadrático\n\n\nResultado\nprobabilidad escalonada\nvalor escalonado\n\n\nAlgoritmo\npartición recursiva\npartición recursiva\n\n\n\nLa estructura no cambia: cambia la noción de homogeneidad."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#una-hoja-es-un-modelo",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#una-hoja-es-un-modelo",
+    "title": "Machine Learning II",
+    "section": "Una hoja es un modelo",
+    "text": "Una hoja es un modelo\nEn una región \\(R_m\\) proponemos una constante \\(c_m\\):\n\\[\n\\hat f(x)=c_m,\\qquad x\\in R_m\n\\]\nLa mejor constante bajo pérdida cuadrática resuelve:\n\\[\n\\min_c \\sum_{i:x_i\\in R_m}(y_i-c)^2\n\\]"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#por-qué-aparece-la-media",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#por-qué-aparece-la-media",
+    "title": "Machine Learning II",
+    "section": "¿Por qué aparece la media?",
+    "text": "¿Por qué aparece la media?\nDerivamos la función objetivo:\n\\[\n\\frac{\\partial}{\\partial c}\\sum_i(y_i-c)^2\n=-2\\sum_i(y_i-c)\n\\]\nAl igualar a cero:\n\\[\n\\sum_i y_i-nc=0\n\\quad\\Rightarrow\\quad\nc=\\bar y\n\\]\nLa media no es una convención: es la solución óptima para SSE."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#una-conexión-útil",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#una-conexión-útil",
+    "title": "Machine Learning II",
+    "section": "Una conexión útil",
+    "text": "Una conexión útil\nSi minimizáramos error absoluto:\n\\[\n\\min_c\\sum_i|y_i-c|\n\\]\nla constante óptima sería una mediana.\n\nLa función de pérdida determina qué resumen aprende cada hoja."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#evaluar-un-corte",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#evaluar-un-corte",
+    "title": "Machine Learning II",
+    "section": "Evaluar un corte",
+    "text": "Evaluar un corte\nPara variable \\(j\\) y umbral \\(s\\):\n\\[\nR_1(j,s)=\\{x:x_j\\le s\\},\\qquad\nR_2(j,s)=\\{x:x_j&gt;s\\}\n\\]\nBuscamos:\n\\[\n\\arg\\min_{j,s}\n\\left[\n\\sum_{x_i\\in R_1}(y_i-\\bar y_{R_1})^2+\n\\sum_{x_i\\in R_2}(y_i-\\bar y_{R_2})^2\n\\right]\n\\]"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#reducción-de-impureza",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#reducción-de-impureza",
+    "title": "Machine Learning II",
+    "section": "Reducción de impureza",
+    "text": "Reducción de impureza\nLa mejora de una división puede escribirse como:\n\\[\n\\Delta I =\nI(R_m)-\n\\frac{N_L}{N_m}I(R_L)-\n\\frac{N_R}{N_m}I(R_R)\n\\]\nEl algoritmo elige la mejora local más grande.\n\nEs una búsqueda voraz.\nNo garantiza el árbol globalmente óptimo.\nLas primeras divisiones condicionan todo lo que sigue."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#ejemplo-numérico",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#ejemplo-numérico",
+    "title": "Machine Learning II",
+    "section": "Ejemplo numérico",
+    "text": "Ejemplo numérico\nUna hoja contiene demandas:\n\\[\n[10,12,13,31,34,36]\n\\]\nSin dividir, predice la media \\(22.7\\).\nUn corte produce:\n\nizquierda: \\([10,12,13]\\), media \\(11.7\\);\nderecha: \\([31,34,36]\\), media \\(33.7\\).\n\n¿Cuánto disminuye la SSE?"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#el-árbol-aprende-escalones",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#el-árbol-aprende-escalones",
+    "title": "Machine Learning II",
+    "section": "El árbol aprende escalones",
+    "text": "El árbol aprende escalones\nCada hoja define una región y un promedio.\n\nPuede capturar umbrales.\nAprende interacciones sin crearlas manualmente.\nNo impone continuidad.\nNo extrapola tendencias fuera del rango observado.\n\nUn árbol de regresión aproxima una función mediante bloques."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#árbol-frente-a-recta",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#árbol-frente-a-recta",
+    "title": "Machine Learning II",
+    "section": "Árbol frente a recta",
+    "text": "Árbol frente a recta\n\n\n\nRegresión lineal\nÁrbol\n\n\n\n\nEfecto global y suave\nEfectos locales y escalonados\n\n\nExtrapola\nNo extrapola\n\n\nInteracciones explícitas\nInteracciones automáticas\n\n\nBaja varianza relativa\nAlta varianza\n\n\nParámetros globales\nReglas jerárquicas\n\n\n\nNo existe un ganador universal: representan supuestos distintos."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#métrica-principal-mae",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#métrica-principal-mae",
+    "title": "Machine Learning II",
+    "section": "Métrica principal: MAE",
+    "text": "Métrica principal: MAE\n\\[\nMAE=\\frac{1}{n}\\sum_{i=1}^{n}|y_i-\\hat y_i|\n\\]\n\nConserva las unidades del objetivo.\n“Nos equivocamos en promedio por 420 bicicletas”.\nTrata linealmente los errores.\nEs relativamente robusta a observaciones extremas."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#rmse-y-errores-grandes",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#rmse-y-errores-grandes",
+    "title": "Machine Learning II",
+    "section": "RMSE y errores grandes",
+    "text": "RMSE y errores grandes\n\\[\nRMSE=\n\\sqrt{\\frac{1}{n}\\sum_{i=1}^{n}(y_i-\\hat y_i)^2}\n\\]\nAl elevar al cuadrado:\n\namplifica errores grandes;\npuede representar mejor fallas operativas severas;\ntambién puede quedar dominada por pocos días extremos."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#qué-aporta-r2",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#qué-aporta-r2",
+    "title": "Machine Learning II",
+    "section": "¿Qué aporta (R^2)?",
+    "text": "¿Qué aporta (R^2)?\n\\[\nR^2=1-\\frac{\\sum_i(y_i-\\hat y_i)^2}\n{\\sum_i(y_i-\\bar y)^2}\n\\]\n\nCompara contra predecir la media.\nNo está en unidades operativas.\nPuede ser negativo en datos nuevos.\nNo reemplaza MAE ni el análisis de residuales."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#baseline-antes-del-árbol",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#baseline-antes-del-árbol",
+    "title": "Machine Learning II",
+    "section": "Baseline antes del árbol",
+    "text": "Baseline antes del árbol\nUna referencia honesta responde:\n\n¿Qué desempeño obtenemos sin aprender relaciones complejas?\n\nPara demanda:\n\nmedia o mediana histórica;\nregla estacional simple;\nmodelo lineal como referencia estructural.\n\nEl árbol debe demostrar utilidad frente a estas referencias."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#el-tiempo-cambia-la-validación",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#el-tiempo-cambia-la-validación",
+    "title": "Machine Learning II",
+    "section": "El tiempo cambia la validación",
+    "text": "El tiempo cambia la validación\nSi queremos predecir el futuro:\nentrenamiento ──────────┊ prueba futura\n2011 ... parte de 2012  ┊ resto de 2012\nMezclar fechas aleatoriamente puede permitir que el pasado “aprenda” del futuro."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#una-fuga-perfecta",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#una-fuga-perfecta",
+    "title": "Machine Learning II",
+    "section": "Una fuga perfecta",
+    "text": "Una fuga perfecta\nEn Bike Sharing:\n\\[\ncnt=casual+registered\n\\]\nUsar esas variables produciría un modelo espectacular pero inútil:\n\nson partes del resultado;\nsolo se conocen después de ocurrir los alquileres;\nno existen al tomar la decisión."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#de-lo-técnico-al-negocio",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#de-lo-técnico-al-negocio",
+    "title": "Machine Learning II",
+    "section": "De lo técnico al negocio",
+    "text": "De lo técnico al negocio\nUna conclusión útil debe incluir:\n\nreferencia;\nmejora en MAE;\ndías o segmentos con mayor error;\ndecisión que puede apoyar;\nlimitación temporal o de datos."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#preguntas-para-discusión",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#preguntas-para-discusión",
+    "title": "Machine Learning II",
+    "section": "Preguntas para discusión",
+    "text": "Preguntas para discusión\n\n¿Qué predice una hoja y por qué?\n¿Qué optimiza un corte?\n¿Cuándo preferiríamos mediana a media?\n¿Por qué el árbol no extrapola?\n¿Qué convierte una variable en fuga?"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#próxima-sesión",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#próxima-sesión",
+    "title": "Machine Learning II",
+    "section": "Próxima sesión",
+    "text": "Próxima sesión\n¿Cuánto árbol necesitamos?\nProfundidad, hojas, validación y poda costo-complejidad."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#apéndice-descomposición-de-sse",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#apéndice-descomposición-de-sse",
+    "title": "Machine Learning II",
+    "section": "Apéndice: descomposición de SSE",
+    "text": "Apéndice: descomposición de SSE\nPara cualquier constante \\(c\\):\n\\[\n\\sum_i(y_i-c)^2\n=\n\\sum_i(y_i-\\bar y)^2+n(\\bar y-c)^2\n\\]\nEl segundo término es no negativo y vale cero únicamente cuando \\(c=\\bar y\\)."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-1-arboles-regresion.html#apéndice-límites-prácticos",
+    "href": "slides/semana-02/sesion-1-arboles-regresion.html#apéndice-límites-prácticos",
+    "title": "Machine Learning II",
+    "section": "Apéndice: límites prácticos",
+    "text": "Apéndice: límites prácticos\n\nPredicciones discontinuas ante cambios pequeños.\nHojas con pocos casos producen medias ruidosas.\nVariables continuas ofrecen muchos cortes candidatos.\nCategorías codificadas como enteros pueden imponer órdenes artificiales.\nLa interpretabilidad disminuye rápidamente con la profundidad."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#complejidad-y-poda",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#complejidad-y-poda",
+    "title": "Machine Learning II",
+    "section": "Complejidad y poda",
+    "text": "Complejidad y poda\nFlexibilidad, validación y generalización\nMachine Learning II · Semana 2 · Sesión 2"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#la-paradoja-del-árbol",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#la-paradoja-del-árbol",
+    "title": "Machine Learning II",
+    "section": "La paradoja del árbol",
+    "text": "La paradoja del árbol\nUn árbol puede seguir dividiendo hasta memorizar casos particulares.\n\nEntrenamiento mejora.\nLa estructura crece.\nLas hojas contienen menos evidencia.\nValidación puede deteriorarse.\n\n\nAjustar mejor los datos conocidos no garantiza predecir mejor datos nuevos."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#tres-regímenes",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#tres-regímenes",
+    "title": "Machine Learning II",
+    "section": "Tres regímenes",
+    "text": "Tres regímenes\n\n\n\nRégimen\nEntrenamiento\nValidación\nLectura\n\n\n\n\nUnderfitting\nmalo\nmalo\nmodelo rígido\n\n\nAdecuado\nbueno\nbueno\nestructura útil\n\n\nOverfitting\nexcelente\npeor\naprende ruido\n\n\n\nLa brecha entre entrenamiento y validación es evidencia, no una definición automática."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#sesgo-y-varianza",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#sesgo-y-varianza",
+    "title": "Machine Learning II",
+    "section": "Sesgo y varianza",
+    "text": "Sesgo y varianza\nDe forma conceptual:\n\\[\n\\mathbb E[(Y-\\hat f(X))^2]\n=\\text{ruido}+\\text{sesgo}^2+\\text{varianza}\n\\]\n\nÁrbol pequeño: mayor sesgo, menor varianza.\nÁrbol grande: menor sesgo, mayor varianza.\nLa validación busca un compromiso empírico."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#max_depth",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#max_depth",
+    "title": "Machine Learning II",
+    "section": "max_depth",
+    "text": "max_depth\nLimita el número de decisiones encadenadas.\n\nReduce interacciones de orden alto.\nFacilita lectura y visualización.\nPuede impedir divisiones útiles en ramas específicas.\n\nNo mide directamente el número total de hojas."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#min_samples_leaf",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#min_samples_leaf",
+    "title": "Machine Learning II",
+    "section": "min_samples_leaf",
+    "text": "min_samples_leaf\nExige evidencia mínima para estimar cada media local.\n\nSuaviza predicciones.\nReduce hojas dominadas por casos individuales.\nPuede ser más interpretable que limitar profundidad.\n\nEn regresión, una media basada en dos observaciones es frágil."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#otros-controles",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#otros-controles",
+    "title": "Machine Learning II",
+    "section": "Otros controles",
+    "text": "Otros controles\n\nmin_samples_split: evidencia mínima para intentar dividir.\nmax_leaf_nodes: presupuesto explícito de regiones.\nmin_impurity_decrease: mejora mínima exigida.\nmax_features: variables candidatas por división.\n\nCada parámetro restringe una dimensión distinta de complejidad."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#pre-poda",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#pre-poda",
+    "title": "Machine Learning II",
+    "section": "Pre-poda",
+    "text": "Pre-poda\nLa pre-poda detiene el crecimiento durante el entrenamiento.\nVentajas\n\nmenor costo;\ncontrol simple;\nevita ramas diminutas.\n\nRiesgo\n\nuna mejora local pequeña puede habilitar divisiones posteriores valiosas."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#post-poda",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#post-poda",
+    "title": "Machine Learning II",
+    "section": "Post-poda",
+    "text": "Post-poda\nLa post-poda:\n\nconstruye un árbol grande;\nevalúa qué ramas aportan poco;\nelimina estructura;\nselecciona el subárbol mediante validación.\n\nPrimero permite explorar; después penaliza complejidad."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#riesgo-costo-complejidad",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#riesgo-costo-complejidad",
+    "title": "Machine Learning II",
+    "section": "Riesgo costo-complejidad",
+    "text": "Riesgo costo-complejidad\n\\[\nR_\\alpha(T)=R(T)+\\alpha|T_{\\text{hojas}}|\n\\]\n\n\\(R(T)\\): error del árbol.\n\\(|T_{\\text{hojas}}|\\): número de hojas.\n\\(\\alpha\\): precio por cada hoja."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#interpretar",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#interpretar",
+    "title": "Machine Learning II",
+    "section": "Interpretar ()",
+    "text": "Interpretar ()\n\n\n\nValor de ()\nResultado esperado\n\n\n\n\n0\nárbol sin penalización\n\n\npequeño\npoda ramas de bajo aporte\n\n\ngrande\nárbol muy compacto\n\n\n\nccp_alpha no se elige mirando test."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#poda-por-eslabón-más-débil",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#poda-por-eslabón-más-débil",
+    "title": "Machine Learning II",
+    "section": "Poda por eslabón más débil",
+    "text": "Poda por eslabón más débil\nPara una rama \\(T_t\\):\n\\[\n\\alpha_t=\n\\frac{R(t)-R(T_t)}\n{|T_t|-1}\n\\]\nMide cuánto error adicional cuesta eliminar las hojas descendientes.\nLa ruta de poda produce una secuencia anidada de subárboles."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#curva-de-validación",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#curva-de-validación",
+    "title": "Machine Learning II",
+    "section": "Curva de validación",
+    "text": "Curva de validación\nUna curva compara:\n\nvalor del hiperparámetro;\ndesempeño de entrenamiento;\ndesempeño de validación;\nvariabilidad entre particiones.\n\nNo basta con escoger el mínimo: debemos leer estabilidad y complejidad."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#validación-temporal",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#validación-temporal",
+    "title": "Machine Learning II",
+    "section": "Validación temporal",
+    "text": "Validación temporal\nTimeSeriesSplit respeta el orden:\nFold 1: [train] [valid]\nFold 2: [----train----] [valid]\nFold 3: [--------train--------] [valid]\nCada validación ocurre después de sus datos de entrenamiento."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#por-qué-no-k-fold-aleatorio",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#por-qué-no-k-fold-aleatorio",
+    "title": "Machine Learning II",
+    "section": "¿Por qué no K-Fold aleatorio?",
+    "text": "¿Por qué no K-Fold aleatorio?\nEn datos temporales puede:\n\nentrenar con observaciones posteriores;\nocultar cambios de nivel;\nproducir una estimación optimista;\nresponder una pregunta diferente a la operación futura.\n\nLa partición debe representar el uso previsto."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#el-pipeline-vive-dentro-de-cv",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#el-pipeline-vive-dentro-de-cv",
+    "title": "Machine Learning II",
+    "section": "El pipeline vive dentro de CV",
+    "text": "El pipeline vive dentro de CV\nPipeline([\n    (\"prep\", ColumnTransformer(...)),\n    (\"model\", DecisionTreeRegressor(...)),\n])\nEn cada fold:\n\naprende categorías y transformaciones con train;\ntransforma validación;\najusta el árbol;\nevalúa sin contaminación."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#selección-frente-a-evaluación",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#selección-frente-a-evaluación",
+    "title": "Machine Learning II",
+    "section": "Selección frente a evaluación",
+    "text": "Selección frente a evaluación\nTRAIN\n├── ajuste en folds\n├── selección de hiperparámetros\n└── reentrenamiento final\n\nTEST\n└── evaluación una sola vez\nSi cambiamos el modelo después de ver test, test deja de ser final."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#incertidumbre-entre-folds",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#incertidumbre-entre-folds",
+    "title": "Machine Learning II",
+    "section": "Incertidumbre entre folds",
+    "text": "Incertidumbre entre folds\nDos configuraciones pueden tener MAE medio parecido pero distinta dispersión.\n\nMedia: desempeño esperado.\nDesviación: sensibilidad al periodo.\nPeor fold: riesgo operativo.\n\nLa mejor decisión no siempre es la diferencia decimal más pequeña."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#residuales",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#residuales",
+    "title": "Machine Learning II",
+    "section": "Residuales",
+    "text": "Residuales\n\\[\ne_i=y_i-\\hat y_i\n\\]\nBuscar:\n\nsesgo sistemático;\nerrores que crecen con la demanda;\ndías extremos;\nsegmentos con fallas recurrentes.\n\nUna métrica agregada puede ocultar patrones."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#error-frecuente-elegir-dos-veces",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#error-frecuente-elegir-dos-veces",
+    "title": "Machine Learning II",
+    "section": "Error frecuente: elegir dos veces",
+    "text": "Error frecuente: elegir dos veces\n\nElegimos profundidad con CV.\nMiramos test.\nCambiamos profundidad porque test “no gustó”.\n\nEl paso 3 incorpora test a la selección y vuelve optimista la evaluación."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#decisión-metodológica-defendible",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#decisión-metodológica-defendible",
+    "title": "Machine Learning II",
+    "section": "Decisión metodológica defendible",
+    "text": "Decisión metodológica defendible\nUna justificación debe indicar:\n\nespacio de configuraciones;\nesquema de validación;\nmétrica principal;\ncriterio de selección;\nuso único de test;\nsensibilidad observada."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#preguntas-para-discusión",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#preguntas-para-discusión",
+    "title": "Machine Learning II",
+    "section": "Preguntas para discusión",
+    "text": "Preguntas para discusión\n\n¿Por qué entrenamiento no selecciona complejidad?\n¿Qué diferencia hay entre pre-poda y post-poda?\n¿Qué compra un ccp_alpha mayor?\n¿Por qué el orden temporal importa?\n¿Qué haría que test dejara de ser test?"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#próxima-sesión",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#próxima-sesión",
+    "title": "Machine Learning II",
+    "section": "Próxima sesión",
+    "text": "Próxima sesión\nUn árbol cambia; ¿puede un grupo ser estable?\nSensibilidad, Condorcet y motivación de Bagging."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#apéndice-regla-de-un-error-estándar",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#apéndice-regla-de-un-error-estándar",
+    "title": "Machine Learning II",
+    "section": "Apéndice: regla de un error estándar",
+    "text": "Apéndice: regla de un error estándar\nPuede elegirse el modelo más simple cuyo desempeño esté dentro de un error estándar del mejor.\n\nSacrifica una mejora incierta.\nFavorece parsimonia.\nRequiere reportar variabilidad, no solo media."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-2-complejidad-poda.html#apéndice-complejidad-no-es-solo-profundidad",
+    "href": "slides/semana-02/sesion-2-complejidad-poda.html#apéndice-complejidad-no-es-solo-profundidad",
+    "title": "Machine Learning II",
+    "section": "Apéndice: complejidad no es solo profundidad",
+    "text": "Apéndice: complejidad no es solo profundidad\nDos árboles con igual profundidad pueden diferir en:\n\nnúmero de hojas;\ndistribución de casos por hoja;\nvariables usadas;\nmejora total de impureza;\nsensibilidad ante perturbaciones."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#estabilidad-y-condorcet",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#estabilidad-y-condorcet",
+    "title": "Machine Learning II",
+    "section": "Estabilidad y Condorcet",
+    "text": "Estabilidad y Condorcet\nDe la fragilidad individual a la agregación\nMachine Learning II · Semana 2 · Sesión 3"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#una-observación-incómoda",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#una-observación-incómoda",
+    "title": "Machine Learning II",
+    "section": "Una observación incómoda",
+    "text": "Una observación incómoda\nEntrenamos dos árboles con datos casi iguales.\n\nCambia el primer corte.\nCambian ramas completas.\nCambian importancias.\nAlgunas predicciones varían mucho.\n\nEl desempeño promedio puede parecer similar y la estructura ser totalmente distinta."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#qué-significa-estabilidad",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#qué-significa-estabilidad",
+    "title": "Machine Learning II",
+    "section": "¿Qué significa estabilidad?",
+    "text": "¿Qué significa estabilidad?\nUn algoritmo es estable si pequeñas perturbaciones de los datos producen cambios pequeños en el modelo o sus predicciones.\nPodemos medir estabilidad de:\n\nmétrica;\npredicción individual;\nestructura;\nvariable seleccionada;\nexplicación."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#por-qué-un-árbol-es-sensible",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#por-qué-un-árbol-es-sensible",
+    "title": "Machine Learning II",
+    "section": "Por qué un árbol es sensible",
+    "text": "Por qué un árbol es sensible\n\nLa búsqueda es voraz.\nDos cortes pueden tener mejoras muy parecidas.\nUna pequeña perturbación cambia el ganador.\nEsa división redefine las observaciones de cada rama.\nEl cambio se propaga recursivamente."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#sensibilidad-no-es-solamente-mal-mae",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#sensibilidad-no-es-solamente-mal-mae",
+    "title": "Machine Learning II",
+    "section": "Sensibilidad no es solamente “mal MAE”",
+    "text": "Sensibilidad no es solamente “mal MAE”\nUn modelo puede tener:\n\nMAE promedio aceptable;\ngran dispersión entre muestras;\npredicciones individuales inconsistentes;\nreglas difíciles de defender.\n\nLa estabilidad es una dimensión adicional de calidad."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#bootstrap",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#bootstrap",
+    "title": "Machine Learning II",
+    "section": "Bootstrap",
+    "text": "Bootstrap\nPara una muestra de tamaño \\(n\\):\n\nseleccionamos \\(n\\) observaciones;\nmuestreamos con reemplazo;\nalgunas aparecen varias veces;\notras quedan fuera;\najustamos un modelo por remuestra.\n\nCada remuestra representa una perturbación plausible."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#aproximadamente-632",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#aproximadamente-632",
+    "title": "Machine Learning II",
+    "section": "Aproximadamente 63,2 %",
+    "text": "Aproximadamente 63,2 %\nLa probabilidad de que una observación no sea elegida en \\(n\\) extracciones es:\n\\[\n\\left(1-\\frac{1}{n}\\right)^n\\to e^{-1}\\approx0.368\n\\]\nPor tanto, una remuestra contiene aproximadamente:\n\\[\n1-e^{-1}\\approx0.632\n\\]\nde observaciones únicas."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#agregar-en-regresión",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#agregar-en-regresión",
+    "title": "Machine Learning II",
+    "section": "Agregar en regresión",
+    "text": "Agregar en regresión\nCon \\(B\\) árboles:\n\\[\n\\bar f(x)=\\frac{1}{B}\\sum_{b=1}^{B}f_b(x)\n\\]\nLos errores positivos y negativos pueden compensarse.\nPromediar no elimina un sesgo compartido por todos."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#agregar-en-clasificación",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#agregar-en-clasificación",
+    "title": "Machine Learning II",
+    "section": "Agregar en clasificación",
+    "text": "Agregar en clasificación\nCada modelo vota:\n\\[\n\\hat y(x)=\\operatorname{modo}\n\\{\\hat y_1(x),\\ldots,\\hat y_B(x)\\}\n\\]\nTambién puede promediarse predict_proba y aplicar un umbral.\nLa segunda opción conserva más información."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#condorcet-intuición",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#condorcet-intuición",
+    "title": "Machine Learning II",
+    "section": "Condorcet: intuición",
+    "text": "Condorcet: intuición\nSi cada votante:\n\ntiene probabilidad \\(p&gt;0.5\\) de acertar;\nvota de forma independiente;\n\nla probabilidad de que una mayoría acierte aumenta con el número de votantes."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#formulación-binomial",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#formulación-binomial",
+    "title": "Machine Learning II",
+    "section": "Formulación binomial",
+    "text": "Formulación binomial\nPara \\(B\\) impar:\n\\[\nP(\\text{mayoría correcta})\n=\n\\sum_{k=(B+1)/2}^{B}\n\\binom{B}{k}p^k(1-p)^{B-k}\n\\]\nSi \\(p&lt;0.5\\), agregar votantes empeora la decisión."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#ejemplo",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#ejemplo",
+    "title": "Machine Learning II",
+    "section": "Ejemplo",
+    "text": "Ejemplo\nCon \\(p=0.60\\):\n\n\n\nVotantes\nMayoría correcta\n\n\n\n\n1\n0.600\n\n\n3\n0.648\n\n\n11\n0.753\n\n\n101\ncercana a 0.98\n\n\n\nEl resultado ideal depende críticamente de independencia."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#el-supuesto-difícil",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#el-supuesto-difícil",
+    "title": "Machine Learning II",
+    "section": "El supuesto difícil",
+    "text": "El supuesto difícil\nLos árboles entrenados sobre los mismos datos:\n\nven patrones parecidos;\nprefieren variables fuertes;\ncometen errores correlacionados.\n\nCien copias del mismo árbol equivalen a un solo árbol."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#varianza-del-promedio",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#varianza-del-promedio",
+    "title": "Machine Learning II",
+    "section": "Varianza del promedio",
+    "text": "Varianza del promedio\nSi cada árbol tiene varianza \\(\\sigma^2\\) y correlación media \\(\\rho\\):\n\\[\n\\operatorname{Var}(\\bar f)\n=\n\\rho\\sigma^2+\n\\frac{1-\\rho}{B}\\sigma^2\n\\]\nEl segundo término disminuye con \\(B\\); el primero permanece."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#dos-palancas",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#dos-palancas",
+    "title": "Machine Learning II",
+    "section": "Dos palancas",
+    "text": "Dos palancas\nPara reducir varianza:\n\naumentar el número de modelos \\(B\\);\ndisminuir su correlación \\(\\rho\\).\n\nBagging trabaja principalmente con remuestras.\nRandom Forest añadirá aleatoriedad en las variables candidatas."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#modelo-débil",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#modelo-débil",
+    "title": "Machine Learning II",
+    "section": "¿Modelo débil?",
+    "text": "¿Modelo débil?\nEn ensambles, “débil” no significa inútil.\n\nDebe aportar señal.\nDebe superar una referencia relevante.\nSus errores deben diferir de los de otros modelos.\n\nPrecisión individual y diversidad operan conjuntamente."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#de-árbol-a-bagging",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#de-árbol-a-bagging",
+    "title": "Machine Learning II",
+    "section": "De árbol a Bagging",
+    "text": "De árbol a Bagging\ndatos\n├── bootstrap 1 → árbol 1 ┐\n├── bootstrap 2 → árbol 2 ├→ promedio/voto\n├── bootstrap 3 → árbol 3 ┤\n└── bootstrap B → árbol B ┘\nBootstrap Aggregating = Bagging."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#qué-bagging-no-resuelve",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#qué-bagging-no-resuelve",
+    "title": "Machine Learning II",
+    "section": "Qué Bagging no resuelve",
+    "text": "Qué Bagging no resuelve\n\nVariables con fuga.\nObjetivo mal formulado.\nMétrica equivocada.\nCambio fuerte de distribución.\nSesgo compartido.\nInterpretación causal indebida.\n\nAgregar modelos no corrige un experimento defectuoso."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#comparar-correctamente",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#comparar-correctamente",
+    "title": "Machine Learning II",
+    "section": "Comparar correctamente",
+    "text": "Comparar correctamente\nÁrbol individual y ensamble deben usar:\n\nmismos datos disponibles;\nmisma partición final;\nmisma métrica;\nmismo momento de predicción;\nselección separada de evaluación."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#interpretabilidad",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#interpretabilidad",
+    "title": "Machine Learning II",
+    "section": "Interpretabilidad",
+    "text": "Interpretabilidad\nUn árbol individual ofrece reglas recorribles.\nUn ensamble:\n\nmejora estabilidad;\npierde una única estructura explicativa;\nrequiere resúmenes globales y locales;\ntraslada el compromiso entre desempeño e interpretación."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#antes-del-reto",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#antes-del-reto",
+    "title": "Machine Learning II",
+    "section": "Antes del reto",
+    "text": "Antes del reto\nEl reto exige:\n\ndetectar fuga;\ncomparar tres complejidades;\nelegir con validación;\nconsultar test una vez;\ncomunicar una recomendación;\nexplicar el puente a Bagging."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#preguntas-de-cierre",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#preguntas-de-cierre",
+    "title": "Machine Learning II",
+    "section": "Preguntas de cierre",
+    "text": "Preguntas de cierre\n\n¿Qué puede variar aunque el MAE promedio no cambie?\n¿Por qué ayuda el bootstrap?\n¿Qué condiciones necesita Condorcet?\n¿Por qué la correlación pone un límite?\n¿Qué problema metodológico no arregla un ensamble?"
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#próxima-semana",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#próxima-semana",
+    "title": "Machine Learning II",
+    "section": "Próxima semana",
+    "text": "Próxima semana\nBagging y Random Forest\nConvertiremos la intuición de hoy en algoritmos completos."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#apéndice-derivación-de-la-varianza",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#apéndice-derivación-de-la-varianza",
+    "title": "Machine Learning II",
+    "section": "Apéndice: derivación de la varianza",
+    "text": "Apéndice: derivación de la varianza\n\\[\n\\operatorname{Var}\\left(\\frac1B\\sum_b f_b\\right)\n=\\frac{1}{B^2}\n\\left[\nB\\sigma^2+B(B-1)\\rho\\sigma^2\n\\right]\n\\]\n\\[\n=\\frac{\\sigma^2}{B}\n+\\frac{B-1}{B}\\rho\\sigma^2\n\\]\nPara \\(B\\) grande, el límite es \\(\\rho\\sigma^2\\)."
+  },
+  {
+    "objectID": "slides/semana-02/sesion-3-estabilidad-condorcet.html#apéndice-independencia-frente-a-diversidad",
+    "href": "slides/semana-02/sesion-3-estabilidad-condorcet.html#apéndice-independencia-frente-a-diversidad",
+    "title": "Machine Learning II",
+    "section": "Apéndice: independencia frente a diversidad",
+    "text": "Apéndice: independencia frente a diversidad\nLa independencia exacta rara vez existe.\nEn práctica buscamos:\n\nerrores menos correlacionados;\nmuestras y variables diversas;\ndesempeño individual suficiente;\nagregación estable.\n\n“Diversidad” es una aproximación operativa al supuesto ideal."
+  }
+]
