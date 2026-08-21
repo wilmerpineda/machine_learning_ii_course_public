@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Balanza entre precisión y recall">
+  <rect width="960" height="540" fill="#f7f3ea"/>
+  <rect x="90" y="70" width="780" height="400" rx="30" fill="#fffaf2" stroke="#d8c7a4" stroke-width="3"/>
+  <line x1="480" y1="150" x2="480" y2="385" stroke="#1f2933" stroke-width="12" stroke-linecap="round"/>
+  <line x1="330" y1="210" x2="630" y2="210" stroke="#1f2933" stroke-width="12" stroke-linecap="round"/>
+  <path d="M285 240 L375 240 L420 335 L240 335 Z" fill="#0f766e" opacity="0.92"/>
+  <path d="M585 240 L675 240 L720 335 L540 335 Z" fill="#b45309" opacity="0.92"/>
+  <circle cx="480" cy="210" r="24" fill="#f3c677" stroke="#1f2933" stroke-width="6"/>
+  <text x="258" y="390" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#1f2933">Precisión</text>
+  <text x="593" y="390" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#1f2933">Recall</text>
+  <text x="255" y="140" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#1f2933">Cada métrica expresa una prioridad distinta.</text>
+</svg>
+
