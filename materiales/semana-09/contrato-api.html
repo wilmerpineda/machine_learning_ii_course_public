@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>contrato-api</title>
+  <link rel="stylesheet" href="../../assets/styles/course.css">
+</head>
+<body>
+  <main class="course-shell">
+    <h1>Contrato de implementación · <code>manifold_lab</code></h1><h2>Regla de dependencia</h2><p>El notebook depende de abstracciones y objetos resultado. Los algoritmos no</p><p>dependen del notebook, de pandas ni de matplotlib.</p><pre><code>HARDatasetLoader ──→ ndarray
+                         ↓
+BaseEmbeddingReducer ← TSNEFromScratch / UMAPFromScratch / adapters
+                         ↓
+                 EmbeddingResult
+                    ↙         ↘
+       EmbeddingEvaluator   EmbeddingPlotter
+                    ↘         ↙
+                  ExperimentRunner</code></pre><h2>Interfaz pública</h2><p>### <code>BaseEmbeddingReducer</code></p><ul><li><code>name</code>: identificador legible.</li><li><code>fit_transform(X)</code>: ajusta y devuelve <code>(n, 2)</code>.</li><li><code>get_params()</code>: parámetros serializables.</li><li><code>embedding_</code>: copia del resultado; falla antes del ajuste.</li></ul><p>### Objetos de dominio</p><ul><li><code>TSNEConfig</code> y <code>UMAPConfig</code>: dataclasses inmutables con validación.</li><li><code>EmbeddingResult</code>: coordenadas, parámetros, duración e historial.</li><li><code>EmbeddingMetrics</code>: preservación local, distancia y costo.</li></ul><p>### Servicios</p><ul><li><code>HARDatasetLoader</code>: valida el paquete offline.</li><li><code>EmbeddingEvaluator</code>: calcula métricas sin ajustar modelos.</li><li><code>ExperimentRunner</code>: ejecuta reductores intercambiables.</li><li><code>EmbeddingPlotter</code>: visualiza resultados ya calculados.</li></ul><h2>Extensión esperada</h2><p>Para agregar Isomap, implemente <code>IsomapAdapter(BaseEmbeddingReducer)</code>. No cambie</p><p><code>ExperimentRunner</code>, <code>EmbeddingEvaluator</code> ni las celdas que consumen la interfaz.</p><h2>Puerta de calidad</h2><pre><code>python -m flake8 src tests
+python -m mypy --strict src
+python -m pylint --fail-under=9.5 src tests
+python -m pytest --cov=manifold_lab --cov-fail-under=85</code></pre>
+  </main>
+</body>
+</html>
