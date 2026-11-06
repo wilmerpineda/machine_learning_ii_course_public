@@ -1,0 +1,45 @@
+.reveal .week9-question {
+  border-left: 6px solid var(--accent-2);
+  font-size: 1.22em;
+  margin-top: 1.2em;
+  padding: 0.45em 0.8em;
+}
+
+.reveal .equation-focus {
+  background: rgba(255, 250, 242, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin: 0.8em auto;
+  padding: 0.7em 1em;
+  width: 88%;
+}
+
+.reveal .contract {
+  color: var(--accent);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.76em;
+  line-height: 1.35;
+}
+
+.reveal .metric-row {
+  display: grid;
+  gap: 1.2em;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1em;
+}
+
+.reveal .metric-row > div {
+  border-top: 4px solid var(--accent);
+  padding-top: 0.45em;
+}
+
+.reveal .large-number {
+  color: var(--accent);
+  font-size: 2.6em;
+  font-weight: 800;
+}
+
+.reveal img {
+  max-height: 570px;
+}
+

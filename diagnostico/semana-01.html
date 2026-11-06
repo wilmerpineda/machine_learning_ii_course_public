@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Diagnóstico de entrada — Machine Learning II</title>
+  <style>
+    :root{--ink:#172029;--muted:#53616d;--paper:#f4efe6;--card:#fffaf2;--line:#d8c7a4;--accent:#0f766e;--warn:#b45309}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,var(--paper),#eef5f3);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+    main{width:min(820px,calc(100% - 28px));margin:28px auto}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,5vw,42px);box-shadow:0 20px 50px #17202918}
+    h1,h2{line-height:1.15} .eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;font-size:.8rem}.muted{color:var(--muted)}
+    label{display:block;font-weight:700;margin:16px 0 6px} input[type=text],input[type=email]{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit}
+    button{border:0;border-radius:9px;padding:12px 18px;font:inherit;font-weight:750;cursor:pointer;background:var(--accent);color:white} button.secondary{background:#e9ded0;color:var(--ink)} button:disabled{opacity:.45;cursor:not-allowed}
+    .actions{display:flex;gap:10px;justify-content:space-between;margin-top:24px}.progress{height:10px;background:#e9ded0;border-radius:10px;overflow:hidden}.progress span{display:block;height:100%;background:var(--accent)}
+    .option{display:block;border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0;font-weight:500;cursor:pointer}.option:has(input:checked){border-color:var(--accent);background:#e6f3f1}.option input{margin-right:10px}
+    .notice{border-left:4px solid var(--accent);background:#eef8f6;padding:12px 16px}.error{border-left-color:var(--warn);background:#fff3e6}.hidden{display:none!important}
+    .score{display:grid;grid-template-columns:170px 1fr 48px;gap:10px;align-items:center;margin:10px 0}.bar{height:12px;background:#e9ded0;border-radius:8px;overflow:hidden}.bar span{display:block;height:100%;background:var(--accent)}
+    details{border-top:1px solid var(--line);padding:12px 0}.correct{color:var(--accent);font-weight:750}.incorrect{color:var(--warn);font-weight:750}@media(max-width:600px){.score{grid-template-columns:1fr 45px}.bar{grid-column:1/-1}.actions{flex-wrap:wrap}}
+  </style>
+</head>
+<body><main><section class="card">
+  <div id="welcome">
+    <p class="eyebrow">Machine Learning II · Semana 1</p><h1>Diagnóstico de entrada</h1>
+    <p>24 preguntas, seis competencias y un solo intento en este navegador. No tiene nota punitiva: sirve para construir una ruta personal de nivelación.</p>
+    <div class="notice"><strong>Privacidad.</strong> Nombre, borrador y resultado permanecen únicamente en este navegador. Esta página no envía información a ningún servidor.</div>
+    <label for="name">Nombre completo</label><input id="name" type="text" autocomplete="name">
+    <button id="start">Comenzar o continuar</button><p id="welcomeError" class="notice error hidden"></p>
+  </div>
+  <div id="quiz" class="hidden">
+    <p class="eyebrow" id="competency"></p><div class="progress"><span id="progress"></span></div>
+    <p class="muted" id="counter"></p><h2 id="prompt"></h2><div id="options"></div>
+    <div class="actions"><button class="secondary" id="prev">Anterior</button><button id="next">Siguiente</button></div>
+    <p id="sendStatus" class="notice hidden"></p>
+  </div>
+  <div id="results" class="hidden"><p class="eyebrow">Perfil de entrada</p><h1>Resultado y recomendaciones</h1><p id="total"></p><div id="scores"></div><h2>Revisión de respuestas</h2><div id="review"></div></div>
+</section></main>
+<script>
+const VERSION="ml2-2026-2-v1";
+const Q=(competency,prompt,options,answer,explanation)=>({competency,prompt,options,answer,explanation});
+const questions=[
+Q("Formulación","Una empresa quiere predecir si un cliente cancelará el próximo mes. ¿Qué tipo de tarea es?",["Regresión","Clasificación","Clustering","Reducción dimensional"],1,"La respuesta es una clase binaria observada en el futuro."),
+Q("Formulación","¿Cuál es la variable objetivo en un modelo para anticipar el valor mensual de ventas?",["El identificador de tienda","Las ventas futuras","El número de predictores","La fecha de entrenamiento"],1,"El objetivo es la cantidad futura que se desea predecir."),
+Q("Formulación","¿Qué variable genera fuga al predecir mora al momento de aprobar un crédito?",["Ingreso declarado al solicitar","Edad al solicitar","Estado de mora observado seis meses después","Tipo de producto solicitado"],2,"La mora futura no está disponible cuando se toma la decisión."),
+Q("Formulación","¿Qué baseline es apropiado para una clasificación desbalanceada?",["La clase mayoritaria o una regla simple","El modelo más profundo posible","El resultado sobre entrenamiento","Eliminar la clase minoritaria"],0,"Un baseline define una referencia mínima honesta."),
+Q("Métricas","En churn, ¿qué representa un falso negativo?",["Alertar a quien permanece","No detectar a quien cancela","Detectar correctamente una cancelación","Predecir correctamente permanencia"],1,"El caso positivo real fue clasificado como negativo."),
+Q("Métricas","Si perder un caso positivo es muy costoso, ¿qué métrica debe priorizarse?",["Recall","Precision","R²","MAE"],0,"Recall mide qué proporción de positivos reales fue detectada."),
+Q("Métricas","¿Por qué accuracy puede engañar cuando 95 % pertenece a una clase?",["Siempre vale cero","Ignora todas las predicciones","La clase mayoritaria puede dominar el resultado","Solo sirve para regresión"],2,"Predecir siempre la mayoría puede lograr 95 % sin detectar la minoría."),
+Q("Métricas","¿Qué métrica de regresión penaliza más los errores grandes?",["MAE","RMSE","Recall","Precision"],1,"Al elevar al cuadrado, RMSE da mayor peso a errores grandes."),
+Q("Generalización","¿Para qué se reserva el conjunto de prueba?",["Ajustar transformaciones","Elegir hiperparámetros muchas veces","Estimar desempeño final en datos no vistos","Aumentar el tamaño de entrenamiento"],2,"Test representa una evaluación final no usada durante selección."),
+Q("Generalización","Se elige el mejor modelo mirando test veinte veces. ¿Cuál es el problema?",["El test se convierte en parte de la selección","El modelo queda necesariamente lineal","Desaparece el desbalance","La muestra aumenta"],0,"La selección se adapta indirectamente al test y optimiza su resultado."),
+Q("Generalización","¿Qué estima una validación cruzada aplicada solo sobre entrenamiento?",["El efecto causal","La variabilidad de desempeño entre particiones","El desempeño de producción garantizado","La cantidad de clases"],1,"El remuestreo muestra desempeño y variabilidad dentro de los datos disponibles."),
+Q("Generalización","Accuracy de entrenamiento 1.00 y validación 0.68 sugieren:",["Underfitting","Overfitting","Ausencia de varianza","Fuga imposible"],1,"La gran brecha es evidencia de ajuste excesivo a entrenamiento."),
+Q("Preprocesamiento","¿Qué código produce fuga?",["split(); scaler.fit(X_train)","scaler.fit(X); split()","Pipeline([scaler, model])","scaler.transform(X_test) después de fit en train"],1,"El escalador aprende del conjunto completo antes de reservar test."),
+Q("Preprocesamiento","En validación cruzada, ¿dónde debe ajustarse la imputación?",["Una vez sobre todo el dataset","Dentro de cada fold mediante Pipeline","Solo después de predecir","No puede usarse imputación"],1,"Cada fold debe aprender sus transformaciones sin observar su validación."),
+Q("Preprocesamiento","¿Qué permite aplicar iguales transformaciones a datos nuevos?",["Una captura de pantalla","Un Pipeline ajustado","Cambiar la semilla","Usar solo accuracy"],1,"Pipeline encapsula preprocesamiento y estimador en el mismo flujo."),
+Q("Preprocesamiento","¿Cuál afirmación sobre escalamiento es correcta?",["Todo modelo lo exige","KNN suele necesitarlo; un árbol no","Los árboles no aceptan números","Solo sirve con variables objetivo"],1,"Distancias y penalizaciones dependen de escala; los cortes del árbol conservan el orden."),
+Q("Modelos ML1","En KNN, un k muy pequeño suele producir:",["Frontera más sensible y alta varianza","Modelo siempre lineal","Mayor suavizado","Independencia condicional"],0,"Pocos vecinos hacen la predicción sensible a observaciones locales."),
+Q("Modelos ML1","El supuesto simplificador de Naive Bayes es:",["Predictores condicionalmente independientes dada la clase","Objetivo continuo","Frontera siempre cuadrática","Ausencia de probabilidades"],0,"El modelo factoriza la distribución condicionada usando ese supuesto."),
+Q("Modelos ML1","`predict_proba` devuelve 0.72 para la clase positiva. Con umbral 0.80 se predice:",["Clase positiva","Clase negativa","Error","Dos clases a la vez"],1,"0.72 no alcanza el umbral de decisión 0.80."),
+Q("Modelos ML1","¿Para qué sirve la regularización?",["Aumentar complejidad sin límite","Penalizar complejidad y mejorar estabilidad","Eliminar la validación","Convertir regresión en clustering"],1,"La penalización controla coeficientes y reduce riesgo de sobreajuste."),
+Q("Interpretación","Una variable importante en un modelo permite concluir que:",["Causa el resultado","Ayuda a predecir dentro de los datos y protocolo evaluados","Debe intervenirse siempre","No está correlacionada con otras"],1,"Importancia predictiva no demuestra causalidad ni una intervención efectiva."),
+Q("Interpretación","¿Cuál flujo protege mejor la evaluación?",["Ajustar y elegir con test","Elegir con CV en train y evaluar una vez en test","Reportar train únicamente","Cambiar test hasta mejorar"],1,"Separa selección de la estimación final de generalización."),
+Q("Interpretación","¿Qué combinación favorece reproducibilidad?",["Semilla, versiones, particiones y pipeline documentados","Solo el accuracy","Ejecutar hasta obtener un buen resultado","Omitir dependencias"],0,"La trazabilidad exige reconstruir datos, transformaciones y configuración."),
+Q("Interpretación","Dos grupos tienen igual F1, pero uno falla sistemáticamente en una población. ¿Qué sigue?",["Ignorar el patrón","Analizar errores por segmentos y comunicar la limitación","Eliminar el grupo","Declarar causalidad"],1,"Una métrica agregada puede ocultar fallas relevantes y desigualdad de desempeño.")
+];
+const competencies=[...new Set(questions.map(q=>q.competency))];
+const recommendations={
+ "Formulación":"Repasa tarea, objetivo, unidad de observación, momento de predicción y baseline.",
+ "Métricas":"Revisa matriz de confusión, costos de error y el notebook voluntario de baselines.",
+ "Generalización":"Practica separación train/validation/test, validación cruzada y sesgo-varianza.",
+ "Preprocesamiento":"Refuerza Pipeline y el principio de ajustar transformaciones solo con entrenamiento.",
+ "Modelos ML1":"Repasa KNN, Naive Bayes, regresión logística, umbrales y regularización.",
+ "Interpretación":"Practica análisis de errores, reproducibilidad y diferencia entre predicción y causalidad."
+};
+const $=id=>document.getElementById(id), draftKey=`diagnostic-draft:${VERSION}`, doneKey=`diagnostic-done:${VERSION}`;
+let state={index:0,answers:Array(questions.length).fill(null),name:""};
+try{state={...state,...JSON.parse(localStorage.getItem(draftKey)||"{}")};}catch{}
+function save(){localStorage.setItem(draftKey,JSON.stringify(state))}
+function validIdentity(){return state.name.trim().length>2}
+function render(){const i=state.index,q=questions[i];$("competency").textContent=q.competency;$("counter").textContent=`Pregunta ${i+1} de ${questions.length}`;$("progress").style.width=`${100*(i+1)/questions.length}%`;$("prompt").textContent=q.prompt;$("options").innerHTML=q.options.map((o,j)=>`<label class="option"><input type="radio" name="answer" value="${j}" ${state.answers[i]===j?"checked":""}>${o}</label>`).join("");$("prev").disabled=i===0;$("next").textContent=i===questions.length-1?"Finalizar diagnóstico":"Siguiente";document.querySelectorAll('input[name=answer]').forEach(el=>el.onchange=()=>{state.answers[i]=Number(el.value);save()})}
+$("name").value=state.name;
+$("start").onclick=()=>{const completed=localStorage.getItem(doneKey);if(completed){const payload=JSON.parse(completed);state.name=payload.name;state.answers=payload.answers;showResults(payload);return}state.name=$("name").value.trim();if(!validIdentity()){showError("Escribe tu nombre para comenzar.");return}save();$("welcome").classList.add("hidden");$("quiz").classList.remove("hidden");render()};
+function showError(msg){$("welcomeError").textContent=msg;$("welcomeError").classList.remove("hidden")}
+$("prev").onclick=()=>{if(state.index>0){state.index--;save();render()}};
+$("next").onclick=async()=>{if(state.answers[state.index]===null){status("Selecciona una respuesta para continuar.",true);return}if(state.index<questions.length-1){state.index++;save();render();return}if(state.answers.some(a=>a===null)){status("Aún hay preguntas sin responder.",true);return}await submit()};
+function profile(){const scores=Object.fromEntries(competencies.map(c=>[c,0]));questions.forEach((q,i)=>scores[q.competency]+=Number(state.answers[i]===q.answer));return scores}
+function status(msg,error=false){const el=$("sendStatus");el.textContent=msg;el.classList.remove("hidden");el.classList.toggle("error",error)}
+function submit(){const payload={version:VERSION,completedAt:new Date().toISOString(),name:state.name,answers:state.answers,scores:profile(),total:state.answers.filter((a,i)=>a===questions[i].answer).length};localStorage.removeItem(draftKey);localStorage.setItem(doneKey,JSON.stringify(payload));showResults(payload)}
+function level(n){return n<=1?"Prioridad alta":n===2?"Reforzar":n===3?"Base suficiente":"Dominio sólido"}
+function showResults(payload){$("welcome").classList.add("hidden");$("quiz").classList.add("hidden");$("results").classList.remove("hidden");$("total").textContent=`${payload.name}: ${payload.total} de ${questions.length} respuestas correctas. Este resultado está guardado solamente en este navegador.`;$("scores").innerHTML=competencies.map(c=>`<div class="score"><strong>${c}</strong><div class="bar"><span style="width:${payload.scores[c]*25}%"></span></div><span>${payload.scores[c]}/4</span></div><p><strong>${level(payload.scores[c])}:</strong> ${recommendations[c]}</p>`).join("");$("review").innerHTML=questions.map((q,i)=>`<details ${state.answers[i]===q.answer?"":"open"}><summary class="${state.answers[i]===q.answer?"correct":"incorrect"}">${i+1}. ${state.answers[i]===q.answer?"Correcta":"Necesita refuerzo"}</summary><p><strong>Tu respuesta:</strong> ${q.options[state.answers[i]]}</p><p><strong>Respuesta esperada:</strong> ${q.options[q.answer]}</p><p>${q.explanation}</p></details>`).join("")}
+</script></body></html>
