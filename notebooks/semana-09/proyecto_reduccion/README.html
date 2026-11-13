@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>README</title>
+  <link rel="stylesheet" href="../../../assets/styles/course.css">
+</head>
+<body>
+  <main class="course-shell">
+    <h1>Manifold Lab</h1><p>Paquete didactico de la semana 9 de Machine Learning II. Separa carga de datos,</p><p>reduccion, evaluacion, visualizacion y orquestacion para evitar logica de negocio</p><p>en los notebooks.</p><h2>Instalacion</h2><pre><code>python -m pip install -e .</code></pre><h2>Puerta de calidad</h2><pre><code>python -m flake8 src tests
+python -m mypy --strict src
+python -m pylint --fail-under=9.5 src tests
+python -m pytest --cov=manifold_lab --cov-fail-under=85</code></pre><p>Las implementaciones <code>FromScratch</code> son exactas y deliberadamente pequenas. No</p><p>son sustitutos de las bibliotecas optimizadas para datos de produccion.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Equipo priorizando alertas de riesgo">
+  <rect width="960" height="540" fill="#eef5f3"/>
+  <rect x="80" y="70" width="800" height="400" rx="28" fill="#ffffff" stroke="#b6d7d2" stroke-width="3"/>
+  <rect x="125" y="125" width="420" height="275" rx="18" fill="#f8fafc" stroke="#d8dee6"/>
+  <rect x="155" y="160" width="360" height="34" rx="8" fill="#0f766e" opacity="0.9"/>
+  <rect x="155" y="220" width="290" height="26" rx="8" fill="#f3c677"/>
+  <rect x="155" y="270" width="330" height="26" rx="8" fill="#e58f65"/>
+  <rect x="155" y="320" width="235" height="26" rx="8" fill="#9fc7c2"/>
+  <circle cx="685" cy="230" r="78" fill="#f3c677"/>
+  <circle cx="685" cy="205" r="30" fill="#1f2933"/>
+  <path d="M585 390 C605 310, 765 310, 785 390" fill="#0f766e"/>
+  <path d="M690 145 L804 342 H576 Z" fill="#b45309" opacity="0.9"/>
+  <text x="674" y="292" font-family="Segoe UI, Arial, sans-serif" font-size="92" font-weight="700" fill="#ffffff">!</text>
+  <text x="125" y="442" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#1f2933">Priorizar no es adivinar: es ordenar decisiones con evidencia.</text>
+</svg>
+
