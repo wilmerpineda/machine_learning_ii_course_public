@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>README</title>
+  <link rel="stylesheet" href="../../assets/styles/course.css">
+</head>
+<body>
+  <main class="course-shell">
+    <h1>Datos · Semana 9</h1><p>Submuestra reproducible de **Human Activity Recognition Using Smartphones**.</p><p>Contiene 3.600 ventanas: 20 por cada combinacion de 30 participantes y seis</p><p>actividades. Las 561 variables de tiempo y frecuencia ya estaban normalizadas</p><p>por los autores del conjunto.</p><h2>Archivos</h2><ul><li><code>har_features.npz</code>: matriz <code>X</code> en <code>float32</code>, forma <code>(3600, 561)</code>.</li><li><code>har_metadata.csv</code>: identificador, participante, actividad y particion original.</li><li><code>feature_names.txt</code>: nombres originales de las 561 columnas.</li><li><code>manifest.json</code>: procedencia, hash, licencia y protocolo de muestreo.</li></ul><p>Las etiquetas no intervienen en el ajuste de PCA, t-SNE o UMAP. Se usan despues</p><p>para auditar si el mapa refleja actividad, participante o ambos.</p><h2>Fuente y licencia</h2><p>Reyes-Ortiz, J., Anguita, D., Ghio, A., Oneto, L. y Parra, X. (2013).</p><p>*Human Activity Recognition Using Smartphones*. UCI Machine Learning Repository.</p><p>DOI: &lt;https://doi.org/10.24432/C54S4K&gt;. Licencia CC BY 4.0.</p><p>La preparacion se reproduce con:</p><pre><code>python scripts/prepare_week9_data.py --source &quot;$env:TEMP\uci_har_240.zip&quot;</code></pre>
+  </main>
+</body>
+</html>
