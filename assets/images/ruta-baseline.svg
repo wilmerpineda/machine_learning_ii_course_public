@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Comparación entre una ruta habitual y una ruta nueva">
+  <rect width="960" height="540" fill="#f4efe6"/>
+  <rect x="70" y="70" width="820" height="400" rx="32" fill="#fffaf2" stroke="#d8c7a4" stroke-width="3"/>
+  <path d="M145 380 C250 260, 310 420, 415 300 S600 205, 735 155" fill="none" stroke="#8a6f3c" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M145 380 C265 360, 350 330, 455 300 S640 245, 735 155" fill="none" stroke="#0f766e" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="145" cy="380" r="28" fill="#0f766e"/>
+  <circle cx="735" cy="155" r="28" fill="#b45309"/>
+  <text x="115" y="440" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#1f2933">Salida</text>
+  <text x="685" y="115" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#1f2933">Meta</text>
+  <rect x="125" y="95" width="300" height="72" rx="14" fill="#ffffff" stroke="#d8c7a4"/>
+  <text x="150" y="139" font-family="Segoe UI, Arial, sans-serif" font-size="27" fill="#1f2933">Ruta habitual = baseline</text>
+  <rect x="535" y="360" width="290" height="72" rx="14" fill="#ffffff" stroke="#b6d7d2"/>
+  <text x="560" y="404" font-family="Segoe UI, Arial, sans-serif" font-size="27" fill="#1f2933">Ruta nueva = modelo</text>
+</svg>
+
